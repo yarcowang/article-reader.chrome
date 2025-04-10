@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "name in manifest.json",
-  "description": "description in manifest.json",
+  "name": "Article Reader",
+  "description": "Detect article element, and click to read it.",
   "options_ui": {
     "page": "src/pages/options/index.html"
   },
@@ -11,13 +11,11 @@
       "32": "icon-32.png"
     }
   },
-  "chrome_url_overrides": {
-    "newtab": "src/pages/newtab/index.html"
-  },
   "icons": {
     "128": "icon-128.png"
   },
   "permissions": [
+    "tts",
     "activeTab"
   ],
   "content_scripts": [
@@ -35,6 +33,9 @@
       ]
     }
   ],
+  "background": {
+    "service_worker": "src/pages/background/index.ts"
+  },
   "devtools_page": "src/pages/devtools/index.html",
   "web_accessible_resources": [
     {
